@@ -23,13 +23,24 @@ class MyApp extends StatelessWidget {
           backgroundColor: Colors.blueGrey[900],
         ),
         backgroundColor: Colors.brown[900],
-        body: SafeArea(
+        body: const SafeArea(
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               CircleAvt(),
               Text1(),
               Text2(),
-              Container1(),
+              SizedBox(
+                height: 10.0,
+                child: Divider(
+                  color: Colors.white24,
+                  indent: 100,
+                  endIndent: 100,
+                ),
+              ),
+              Card1(),
+              Card2(),
+              Card3(),
             ],
           ),
         ),
@@ -54,7 +65,6 @@ class Text1 extends StatelessWidget {
     );
   }
 }
-
 class Text2 extends StatelessWidget {
   const Text2({super.key});
 
@@ -72,7 +82,6 @@ class Text2 extends StatelessWidget {
     );
   }
 }
-
 class CircleAvt extends StatelessWidget {
   const CircleAvt({super.key});
 
@@ -85,36 +94,123 @@ class CircleAvt extends StatelessWidget {
     );
   }
 }
-
 class Container1 extends StatelessWidget {
   const Container1({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(50.0),
-      child: Container(
-        color: Colors.white,
-        child: Row(
-          children: [
-            Icon(
-              Icons.phone_android_rounded,
-              size: 20,
+    return Container(
+      color: Colors.white,
+      padding: EdgeInsets.all(5),
+      margin: EdgeInsets.fromLTRB(20, 0, 20, 0),
+      child: const Row(
+        children: [
+          Icon(
+            Icons.phone_android_rounded,
+            size: 20,
+            color: Colors.teal,
+          ),
+          SizedBox(
+            width: 20,
+          ),
+          Text(
+            '0909 123 123',
+            style: TextStyle(
               color: Colors.teal,
+              fontFamily: 'OpenSans_Condensed',
+              fontSize: 20,
             ),
-            SizedBox(
-              width: 20,
+          ),
+        ],
+      ),
+    );
+  }
+}
+class Container2 extends StatelessWidget {
+  const Container2({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      color: Colors.white,
+      padding: EdgeInsets.all(5),
+      margin: EdgeInsets.fromLTRB(20, 0, 20, 0),
+      child: const Row(
+        children: [
+          Icon(
+            Icons.email_rounded,
+            size: 20,
+            color: Colors.teal,
+          ),
+          SizedBox(
+            width: 20,
+          ),
+          Text(
+            'PikaCircle90@gmail.com',
+            style: TextStyle(
+              color: Colors.teal,
+              fontFamily: 'OpenSans_Condensed',
+              fontSize: 20,
             ),
-            Text(
-              '0909 123 123',
-              style: TextStyle(
-                color: Colors.teal,
-                fontFamily: 'OpenSans_Condensed',
-                fontSize: 20,
-              ),
-            ),
-          ],
+          ),
+        ],
+      ),
+    );
+  }
+}
+class Card2 extends StatelessWidget {
+  const Card2({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Card(
+      margin: EdgeInsets.symmetric(vertical: 5, horizontal: 20),
+      child: ListTile(
+          leading: Icon(
+            Icons.phone,
+            color: Colors.teal,
+          ),
+          title: Text(
+            '093 88 752 90',
+            style: TextStyle(color: Colors.teal),
+          ),
+          subtitle: Text("My phone"),
         ),
+    );
+  }
+}
+class Card3 extends StatelessWidget {
+  const Card3({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Card(
+      margin: EdgeInsets.symmetric(vertical: 0, horizontal: 20),
+      child: ListTile(
+        leading: CircleAvatar(backgroundColor: Colors.teal,backgroundImage: AssetImage("images/one1.png"),),
+        title: Text(
+          '093 88 752 90',
+          style: TextStyle(color: Colors.teal),
+        ),
+        subtitle: Text("My phone"),
+      ),
+    );
+  }
+}
+class Card1 extends StatelessWidget {
+  const Card1({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Card(
+      margin: EdgeInsets.symmetric(vertical: 0, horizontal: 20),
+      child: ListTile(
+        leading: CircleAvatar(backgroundColor: Colors.teal,backgroundImage: AssetImage("images/one1.png"),),
+        title: Text(
+          '093 88 752 90',
+          style: TextStyle(color: Colors.teal),
+        ),
+        subtitle: Text("My phone"),
       ),
     );
   }
